@@ -30,7 +30,7 @@ def filter_keys(dct):
 
 def to_csv(prop):
     """ Convert response to csv """
-    return ','.join(filter_keys(prop))
+    return '\t'.join(filter_keys(prop))
 
 
 def main():
