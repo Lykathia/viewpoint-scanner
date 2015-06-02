@@ -21,7 +21,7 @@ def get_viewpoint_json(pid):
 
 def filter_keys(dct):
     """ Filter to just be keys we're interested in. """
-    keys = ['list_price', 'assessment', 'listdate', 'area', 'age']
+    keys = ['pid', 'list_price', 'assessment', 'listdate', 'area', 'age']
     tmp = [dct[k] for k in keys]
     tmp.append(dct['address']['civicnum'] + ' ' + dct['address']['street'])
     tmp.append(dct['address']['city'])
