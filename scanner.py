@@ -4,8 +4,7 @@
 Scanner for consolidating information from ViewPoint.
 """
 
-import json
-from urllib import request
+import requests
 import sys
 
 VIEWPOINT_API = 'http://www.viewpoint.ca/api/v1/properties/'
@@ -15,8 +14,8 @@ def get_viewpoint_json(pid):
     """
     e.g. http://www.viewpoint.ca/api/v1/properties/40548778.json
     """
-    response = request.urlopen(VIEWPOINT_API + pid + '.json')
-    return json.loads(response.readall().decode('utf-8'))
+    response = requests.get(VIEWPOINT_API + pid + '.json')
+    return response.json()
 
 
 def filter_keys(dct):
